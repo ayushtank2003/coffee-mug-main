@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Coffee Management System</h1>
+    <div class="card-container">
+
+        <div class="card gold-card" id="goldCard" onclick="selectCustomerType('gold')">
+            <h2>Gold Member</h2>
+            <p>Special Discount for Gold Members</p>
+        </div>
+
+        <div class="card silver-card" id="silverCard" onclick="selectCustomerType('silver')">
+            <h2>Silver Member</h2>
+            <p>Exclusive Offers for Silver Members</p>
+        </div>
+
+        <div class="card regular-card" id="regularCard" onclick="selectCustomerType('regular')">
+            <h2>Regular Member</h2>
+            <p>Standard Discount for Regular members</p>
+        </div>
+        
+    </div>
+    
+    <div><input type="hidden" id="CustomerType"></div>
+
+    <div id="options" class="options-container">
+        <!-- Coffee Type -->
+        <label for="CoffeeType">Select Coffee Type</label>
+        <select class="select-options" id="CoffeeType">
+            <option value="latte">Latte</option>
+            <option value="espresso">Expresso</option>
+            <option value="mocha">Mocha</option>
+        </select>
+        
+        <!-- coffee size -->
+        <label for="CoffeeSize">Select Coffee Size</label>
+        <select class="select-options" id="CoffeeSize">
+            <option value="Small">Small</option>
+            <option value="Medium">Medium</option>
+            <option value="Large">Large</option>
+        </select>
+
+        <!-- Quantity -->
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" min=1 class="input-number">
+        <button onclick="calculateTotal()">Calculate Total</button>
+    </div>
+
+    <div  id="result" class="result-container card" >
+        <h2>Result</h2>
+        <p>Total Price <span id="totalPrice" class="result-text"></span></p>
+        <p>Discount Applied <span id="discountApplied" class="result-text"></span></p>
+        <p>Final Amount<span id="finalAmount" class="result-text"></span></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
